@@ -4,7 +4,7 @@
         <!-- display when marked -->
     </div>
     <p [ngClass]="isDone? 'task-done-text': ''">{{itemText}}</p>
-    <div class="delete">
+    <div class="delete" (click)="onDeleteItem()" >
         <img src="../../assets/images/icon-cross.svg"/>
     </div>
 </div>

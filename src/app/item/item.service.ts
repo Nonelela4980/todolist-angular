@@ -1,19 +1,34 @@
 import { Injectable } from '@angular/core';
-import { items } from 'src/data/items-data';
+
 import Item from 'src/interfaces/Items';
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
+  items:Item[]=[
+    {
+        id:1,
+        text:'Do programming prac',
+        isDone:false
+    }
+]
   constructor() { }
 
   getItems():Item[]{
-    return items
+    return this.items
   }
 
   addItem(item:Item){
-    items.push(item)
+    this.items.push(item)
+    console.log('adedd')
+  }
+
+  deleteItem(id:Number){
+   this.items = this.items.filter(item=>item.id!=id)
+
+    console.log('ite,s',this.items)
+    console.log('delted')
   }
 
 }

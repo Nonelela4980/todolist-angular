@@ -18,6 +18,7 @@
                     <div class="list">
                         <ng-container *ngFor="let item of items">
                             <app-item
+                            [id]="item.id"
                             [itemText]="item.text"
                             [isDone]="item.isDone"
                             ></app-item>        

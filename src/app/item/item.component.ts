@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { ItemService } from './item.service';
 
 @Component({
   selector: 'app-item',
@@ -10,7 +11,8 @@ export class ItemComponent implements OnInit {
 
   @Input() itemText:String = ''
   @Input() isDone:boolean = false
-  constructor() { 
+  @Input() id:Number = 0
+  constructor(private itemService:ItemService) { 
 
   }
 
@@ -19,6 +21,10 @@ export class ItemComponent implements OnInit {
 
   onCheckDone(){
     this.isDone = !this.isDone
+  }
+
+  onDeleteItem(){
+    this.itemService.deleteItem(this.id)
   }
 
 }
