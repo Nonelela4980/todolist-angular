@@ -7,12 +7,18 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() itemText:string = ''
-  @Input() isDone:boolean = false
 
-  constructor() { }
+  @Input() itemText:String = ''
+  @Input() isDone:boolean = false
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
+  }
+
+  onCheckDone(){
+    this.isDone = !this.isDone
   }
 
 }

@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     border:1px solid hsl(236, 9%, 61%);
-    /* background: linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%)); */
+    
 }
 .mark:hover{
     border-width: 2px;
@@ -26,4 +26,10 @@
 }
 .delete{
     cursor: pointer;
+}
+.task-done-bg{
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.task-done-text{
+    text-decoration: line-through;
 }

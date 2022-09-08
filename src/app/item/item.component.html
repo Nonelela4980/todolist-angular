@@ -1,9 +1,9 @@
 <div class="item">
-    <div class="mark">
-        <!-- <img src="../../assets/images/icon-check.svg"/> -->
+    <div class="mark" (click)="onCheckDone()" [ngClass]="isDone? 'task-done-bg': ''">
+        <img *ngIf="isDone"  src="../../assets/images/icon-check.svg"/>
         <!-- display when marked -->
     </div>
-    <p>{{itemText}}</p>
+    <p [ngClass]="isDone? 'task-done-text': ''">{{itemText}}</p>
     <div class="delete">
         <img src="../../assets/images/icon-cross.svg"/>
     </div>

@@ -10,16 +10,18 @@
                         <img src="../../assets/images/icon-sun.svg" alt="sun"/>
                 </div>
                 <section>
-                    <input type="text" placeholder="type item here..." [formControl]="tfItem"/>
-                    <button>Add</button>
+                    <input type="text" placeholder="type item here..." [formControl]="tfItem"
+                     (keydown.enter)="onKeydown($event)" [value]="tfItem.value"/>
+                    <button (click)="onAddItem()" >Add</button>
                 </section>
                 <div class="items-list">
                     <div class="list">
-                        <app-item
-                        itemText="Study programming"
-                        [isDone]="true"
-                        ></app-item>
-                        <app-item itemText="Study programming" [isDone]="true"></app-item>
+                        <ng-container *ngFor="let item of items">
+                            <app-item
+                            [itemText]="item.text"
+                            [isDone]="item.isDone"
+                            ></app-item>        
+                        </ng-container>
                     </div>
                     <div class="items-list-bottom">
                         <p>0 items left</p>
