@@ -1,0 +1,38 @@
+<div class="home-root">
+    <div class="home-top">
+    
+    </div>
+    <!-- Content -->
+    <div class="container">
+        <div class="root">
+                <div class="container-top">
+                        <h3>TO DO</h3>
+                        <img src="../../assets/images/icon-sun.svg" alt="sun"/>
+                </div>
+                <section>
+                    <input type="text" placeholder="type item here..." [formControl]="tfItem"/>
+                    <button>Add</button>
+                </section>
+                <div class="items-list">
+                    <div class="list">
+                        <app-item
+                        itemText="Study programming"
+                        [isDone]="true"
+                        ></app-item>
+                        <app-item itemText="Study programming" [isDone]="true"></app-item>
+                    </div>
+                    <div class="items-list-bottom">
+                        <p>0 items left</p>
+                        <div class="filters">
+                            <p>All</p>
+                            <p>Active</p>
+                            <p>Completed</p>
+                        </div>
+                        <p>Clear Completed</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="home-bottom">
+    </div>
+</div>
